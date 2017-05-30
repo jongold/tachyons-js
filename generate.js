@@ -65,6 +65,14 @@ const toJSON = R.compose(
   js => JSON.stringify(js, null, 2)
 )
 
+const declaration = (key, val) =>
+  `export const ${key} = ${JSON.stringify(val, null, 2)};\n\n`;
+
+const makeES6Module = obj =>
+  Object.keys(obj).reduce((acc, key) =>
+    acc.concat(declaration(key, obj[key]))
+  , '')
+
 // writeFile :: JSON -> Promise [fs]
 function writeFile(file) {
   return new Promise((res, rej) => {
@@ -151,6 +159,7 @@ tachyonsModules()
   .then(mergeMediaQueries)
   .then(extractHoverStyles)
   .then(R.omit(['root']))
-  .then(toJSON)
+  // .then(toJSON)
+  .then(makeES6Module)
   .then(writeFile)
   .catch(e => console.log(e))

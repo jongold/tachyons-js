@@ -4,7 +4,8 @@
   "description": "Tachyons for your favorite inline-styles package",
   "main": "index.js",
   "scripts": {
-    "build": "node generate.js"
+    "build": "node generate.js",
+    "test": "rollup examples/test --format cjs"
   },
   "author": "Jon Gold <jon.gold@airbnb.com>",
   "license": "MIT",
@@ -20,6 +21,7 @@
   "devDependencies": {
     "native-css": "^1.2.3",
     "ramda": "^0.21.0",
+    "rollup": "^0.41.6",
     "tachyons": "^4.7.4",
     "tachyons-aspect-ratios": "^1.0.1",
     "tachyons-background-position": "^1.0.3",
