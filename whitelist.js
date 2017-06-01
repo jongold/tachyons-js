@@ -35,7 +35,7 @@ module.exports = [
     'tachyons-skins',
     'tachyons-skins-pseudo',
     'tachyons-spacing',
-    'tachyons-negative-margin',
+    // 'tachyons-negative-margin',
     'tachyons-tables',
     'tachyons-text-decoration',
     'tachyons-text-align',
@@ -48,6 +48,5 @@ module.exports = [
     'tachyons-vertical-align',
     'tachyons-hovers',
     'tachyons-z-index',
-    'tachyons-modular-nested',
-    'tachyons-styles'
+    'tachyons-modular-nested'
 ];
